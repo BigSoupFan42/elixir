@@ -18,7 +18,10 @@ RUN \
     python3-pip \
     python3-jinja2 \
     python3-bsddb3 \
+    python3-falcon \
     python3-pytest \
+    python3-pygments \
+    universal-ctags \
     perl \
     git \
     apache2 \
@@ -26,24 +29,6 @@ RUN \
     libjansson4 \
     libyaml-0-2 \
     wget
-
-RUN \
-  pip3 install falcon
-
-RUN \
-  ln -s /usr/bin/pytest-3 /usr/bin/pytest
-
-RUN \
-  wget https://bootlin.com/pub/elixir/universal-ctags_0+git20200526-0ubuntu1_amd64.deb
-
-RUN \
-  dpkg -i universal-ctags_0+git20200526-0ubuntu1_amd64.deb
-
-RUN \
-  wget https://bootlin.com/pub/elixir/Pygments-2.6.1.elixir-py3-none-any.whl
-
-RUN \
-  pip3 install Pygments-2.6.1.elixir-py3-none-any.whl
 
 RUN \
   git config --global user.email 'elixir@dummy.com' && \
